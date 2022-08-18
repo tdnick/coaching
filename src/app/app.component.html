@@ -1,0 +1,21 @@
+<p>test component</p>
+
+<input inputFilter type="text">
+
+<h4>Pipe demo</h4>
+<p>Pipe which makes first letter uppercase and rest of text lowercase</p>
+<p>Pipe which adds punctuation to the finished string through parameters</p>
+
+<input type="text" [(ngModel)]="pipevar">
+
+<span>Choose punctuation:</span>
+<input type="radio" id="dot" name="punct" value="." [(ngModel)]="punctuationValue">
+<label for="dot">.</label>
+
+<input type="radio" id="exclamation" name="punct" value="!" [(ngModel)]="punctuationValue">
+<label for="exclamation">!</label>
+
+<input type="radio" id="question" name="punct" value="?" [(ngModel)]="punctuationValue">
+<label for="question">?</label>
+
+<p>Your message is: {{pipevar | firstUpperCase | punctuation: punctuationValue}}</p>
