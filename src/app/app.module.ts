@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { FirstUpperCasePipe } from './first-upper-case.pipe';
 import { InputFilterDirective } from './input-filter.directive';
 import { PunctuationPipe } from './punctuation.pipe';
+import { AsyncTestComponent } from './async-test/async-test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputFilterDirective,
     FirstUpperCasePipe,
-    PunctuationPipe
+    PunctuationPipe,
+    AsyncTestComponent
   ],
   imports: [
     BrowserModule,

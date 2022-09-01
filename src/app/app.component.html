@@ -19,3 +19,13 @@
 <label for="question">?</label>
 
 <p>Your message is: {{pipevar | firstUpperCase | punctuation: punctuationValue}}</p>
+
+<h4>Async pipe</h4>
+
+<h5>With async pipe</h5>
+<p>Value in parent: {{ observable | async }}</p>
+<app-async-test [value]="(observable | async)!"></app-async-test>
+
+<h5>With regular subscription</h5>
+<p>Value in parent: {{numberFromObservable}}</p>
+<app-async-test [value]="numberFromObservable!"></app-async-test>
