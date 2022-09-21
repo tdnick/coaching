@@ -24,8 +24,12 @@
 
 <h5>With async pipe</h5>
 <p>Value in parent: {{ observable | async }}</p>
-<app-async-test [value]="(observable | async)!"></app-async-test>
+<app-async-test [value]="(observable | async)"></app-async-test>
 
 <h5>With regular subscription</h5>
 <p>Value in parent: {{numberFromObservable}}</p>
 <app-async-test [value]="numberFromObservable!"></app-async-test>
+
+<h4>Observable vs Promise</h4>
+
+<app-observable-promise></app-observable-promise>

@@ -8,6 +8,8 @@ import { FirstUpperCasePipe } from './first-upper-case.pipe';
 import { InputFilterDirective } from './input-filter.directive';
 import { PunctuationPipe } from './punctuation.pipe';
 import { AsyncTestComponent } from './async-test/async-test.component';
+import { ObservablePromiseComponent } from './observable-promise/observable-promise.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { AsyncTestComponent } from './async-test/async-test.component';
     InputFilterDirective,
     FirstUpperCasePipe,
     PunctuationPipe,
-    AsyncTestComponent
+    AsyncTestComponent,
+    ObservablePromiseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
