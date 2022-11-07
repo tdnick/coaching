@@ -10,6 +10,7 @@ import { PunctuationPipe } from './punctuation.pipe';
 import { AsyncTestComponent } from './async-test/async-test.component';
 import { ObservablePromiseComponent } from './observable-promise/observable-promise.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     FirstUpperCasePipe,
     PunctuationPipe,
     AsyncTestComponent,
-    ObservablePromiseComponent
+    ObservablePromiseComponent,
+    RxjsOperatorsComponent
   ],
   imports: [
     BrowserModule,

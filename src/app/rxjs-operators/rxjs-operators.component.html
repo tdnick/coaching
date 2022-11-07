@@ -1,0 +1,37 @@
+<p>rxjs-operators works!</p>
+
+<button (click)="combineUnsub()">Stop combineLatest</button>
+<button (click)="mergeUnsub()">Stop merge</button>
+
+<div class="flex">
+    <div class="flex-child">
+        <p>forkJoin</p>
+        <ul>
+            <li *ngFor="let res of forkResponses">
+                {{res}}
+            </li>
+        </ul>
+    </div>
+    <div class="flex-child">
+        <p>combineLatest</p>
+        <p [ngClass]="{'subbed': combineSub, 'unsubbed': combineSub.closed}">
+            {{!combineSub.closed ? 'subscribed' : 'unsubscribed'}}
+        </p>
+        <ul>
+            <li *ngFor="let res of combineResponses">
+                {{res}}
+            </li>
+        </ul>
+    </div>
+    <div class="flex-child">
+        <p>merge</p>
+        <p [ngClass]="{'subbed': mergeSub, 'unsubbed': mergeSub.closed}">
+            {{!mergeSub.closed ? 'subscribed' : 'unsubscribed'}}
+        </p>
+        <ul>
+            <li *ngFor="let res of mergeResponses">
+                {{res}}
+            </li>
+        </ul>
+    </div>
+</div>
