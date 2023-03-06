@@ -1,0 +1,13 @@
+<p>control-value-accessor works!</p>
+
+<p>form status: {{form.status}}</p>
+
+<form [formGroup]="form">
+    <label for="firstName">First Name</label>
+    <input id="firstName" type="text" formControlName="firstName" />
+
+    <label for="lastName">Last Name</label>
+    <input id="lastName" type="text" formControlName="lastName" />
+
+    <app-phone-number-input formControlName="phoneNumber"></app-phone-number-input>
+</form>

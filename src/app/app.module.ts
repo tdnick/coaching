@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,8 @@ import { AsyncTestComponent } from './async-test/async-test.component';
 import { ObservablePromiseComponent } from './observable-promise/observable-promise.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
+import { ControlValueAccessorComponent } from './control-value-accessor/control-value-accessor.component';
+import { PhoneNumberInputComponent } from './phone-number-input/phone-number-input.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,16 @@ import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.componen
     PunctuationPipe,
     AsyncTestComponent,
     ObservablePromiseComponent,
-    RxjsOperatorsComponent
+    RxjsOperatorsComponent,
+    ControlValueAccessorComponent,
+    PhoneNumberInputComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
