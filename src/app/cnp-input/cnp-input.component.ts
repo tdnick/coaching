@@ -1,30 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator } from '@angular/forms';
+import { Component, OnInit, Optional, Self } from '@angular/core';
+import { AbstractControl, ControlValueAccessor, NgControl, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator } from '@angular/forms';
 
 @Component({
-  selector: 'app-phone-number-input',
-  templateUrl: './phone-number-input.component.html',
-  styleUrls: ['./phone-number-input.component.scss'],
+  selector: 'app-cnp-input',
+  templateUrl: './cnp-input.component.html',
+  styleUrls: ['./cnp-input.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       multi: true,
-      useExisting: PhoneNumberInputComponent
+      useExisting: CNPInputComponent
     },
     {
       provide: NG_VALIDATORS,
       multi: true,
-      useExisting: PhoneNumberInputComponent
+      useExisting: CNPInputComponent
     }
   ]
 })
-export class PhoneNumberInputComponent implements ControlValueAccessor, Validator {
+export class CNPInputComponent implements ControlValueAccessor, Validator {
 
   phoneNumber = '';
   touched = false;
 
-  constructor() {
-  }
+  onValidationChange = () => {}
+
+  constructor() {}
 
   //luat de pe net
   validCNP( p_cnp: string ): boolean {
@@ -51,6 +52,7 @@ export class PhoneNumberInputComponent implements ControlValueAccessor, Validato
 
   onChange = (cnp: any) => {
     this.markAsTouched();
+    this.onValidationChange();
   };
   
   onTouched = () => {};
@@ -74,17 +76,22 @@ export class PhoneNumberInputComponent implements ControlValueAccessor, Validato
     }
   }
 
-  //@ts-ignore
-  validate(control: AbstractControl<any, any>): ValidationErrors | null {
+  validate(control: AbstractControl): ValidationErrors | null {
     const phoneNumber = control.value;
 
     if (!this.validCNP(phoneNumber)) {
       return {
-        mustBeValid: {
+        valid: {
           phoneNumber
         }
       }
     }
+
+    return null;
+  }
+
+  registerOnValidatorChange(fn: () => void): void {
+    this.onValidationChange = fn;
   }
 
 }

@@ -12,7 +12,7 @@ import { ObservablePromiseComponent } from './observable-promise/observable-prom
 import { HttpClientModule } from '@angular/common/http';
 import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
 import { ControlValueAccessorComponent } from './control-value-accessor/control-value-accessor.component';
-import { PhoneNumberInputComponent } from './phone-number-input/phone-number-input.component';
+import { CNPInputComponent } from './cnp-input/cnp-input.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { PhoneNumberInputComponent } from './phone-number-input/phone-number-inp
     ObservablePromiseComponent,
     RxjsOperatorsComponent,
     ControlValueAccessorComponent,
-    PhoneNumberInputComponent
+    CNPInputComponent
   ],
   imports: [
     BrowserModule,

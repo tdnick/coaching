@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, FormBuilder, Validators } from '@angular/forms';
-import { PhoneNumberInputComponent } from '../phone-number-input/phone-number-input.component';
+import { CNPInputComponent } from '../cnp-input/cnp-input.component';
 
 @Component({
   selector: 'app-control-value-accessor',
@@ -12,7 +12,7 @@ export class ControlValueAccessorComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   form = this.fb.group({
-    firstName: ['', Validators.required],
+    firstName: ['', [Validators.required, Validators.minLength(5)]],
     lastName: ['', Validators.required],
     phoneNumber: ['']
   });
