@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
 import { ControlValueAccessorComponent } from './control-value-accessor/control-value-accessor.component';
 import { CNPInputComponent } from './cnp-input/cnp-input.component';
+import { MobileFirstComponent } from './mobile-first/mobile-first.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CNPInputComponent } from './cnp-input/cnp-input.component';
     ObservablePromiseComponent,
     RxjsOperatorsComponent,
     ControlValueAccessorComponent,
-    CNPInputComponent
+    CNPInputComponent,
+    MobileFirstComponent
   ],
   imports: [
     BrowserModule,
